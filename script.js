@@ -8,3 +8,10 @@ let emailError = document.getElementById("emailError");
 let passwordError = document.getElementById("passwordError");
 let confirmPasswordError = document.getElementById("confirmPasswordError");
 let successMessage = document.getElementById("successMessage");
+
+window.addEventListener("load", function() {
+    let saved = localStorage.getItem("savedUsername");
+    if (saved) {
+        username.value = saved;
+    }
+});
