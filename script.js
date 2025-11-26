@@ -23,3 +23,11 @@ username.addEventListener("input", function() {
         usernameError.textContent = "";
     }
 });
+
+email.addEventListener("input", function() {
+    if (email.validity.typeMismatch) {
+        emailError.textContent = "Email is not valid";
+    } else {
+        emailError.textContent = "";
+    }
+});
