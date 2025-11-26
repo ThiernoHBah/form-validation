@@ -15,3 +15,11 @@ window.addEventListener("load", function() {
         username.value = saved;
     }
 });
+
+username.addEventListener("input", function() {
+    if (username.value.length < 3) {
+        usernameError.textContent = "Username must be at least 3 characters";
+    } else {
+        usernameError.textContent = "";
+    }
+});
