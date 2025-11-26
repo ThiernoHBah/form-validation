@@ -25,3 +25,11 @@ input {
     width: 95%;
     padding: 8px;
 }
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
+small {
+    font-size: 0.8em;
+    color: gray;
+}
