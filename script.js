@@ -31,3 +31,21 @@ email.addEventListener("input", function() {
         emailError.textContent = "";
     }
 });
+
+password.addEventListener("input", function() {
+    if (password.validity.valueMissing) {
+        passwordError.textContent = "Password is required";
+    } else if (password.validity.tooShort) {
+        passwordError.textContent = "Password too short";
+    } else if (password.validity.patternMismatch) {
+        passwordError.textContent = "Does not match requirements";
+    } else {
+        passwordError.textContent = "";
+    }
+
+    if (confirmPassword.value !== "" && confirmPassword.value !== password.value) {
+        confirmPasswordError.textContent = "Passwords do not match";
+    } else {
+        confirmPasswordError.textContent = "";
+    }
+});
