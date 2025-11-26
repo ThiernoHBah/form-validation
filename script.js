@@ -49,3 +49,11 @@ password.addEventListener("input", function() {
         confirmPasswordError.textContent = "";
     }
 });
+
+confirmPassword.addEventListener("input", function() {
+    if (confirmPassword.value !== password.value) {
+        confirmPasswordError.textContent = "Passwords do not match";
+    } else {
+        confirmPasswordError.textContent = "";
+    }
+});
