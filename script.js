@@ -57,3 +57,40 @@ confirmPassword.addEventListener("input", function() {
         confirmPasswordError.textContent = "";
     }
 });
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // run checks again
+    if (username.value.length < 3) {
+        usernameError.textContent = "Username must be at least 3 characters";
+        username.focus();
+        return;
+    }
+
+    if (email.validity.typeMismatch || email.value === "") {
+        emailError.textContent = "Email is not valid";
+        email.focus();
+        return;
+    }
+
+    if (password.value === "" || passwordError.textContent !== "") {
+        passwordError.textContent = "Fix your password";
+        password.focus();
+        return;
+    }
+
+    if (confirmPassword.value !== password.value) {
+        confirmPasswordError.textContent = "Passwords do not match";
+        confirmPassword.focus();
+        return;
+    }
+
+    // success
+    successMessage.textContent = "Registration Successful!";
+
+    // save username
+    localStorage.setItem("savedUsername", username.value);
+
+    form.reset();
+});
